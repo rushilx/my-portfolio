@@ -9,6 +9,8 @@ import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
 
 const AboutSection = dynamic(() => import("./components/homepage/about"), { ssr: false })
+const Experience = dynamic(() => import("./components/homepage/experience"), { ssr: false })
+const Education = dynamic(() => import("./components/homepage/education"), { ssr: false })
 
 async function getData() {
   const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
