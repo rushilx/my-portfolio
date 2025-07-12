@@ -1,3 +1,5 @@
+"use client";
+
 [build]
   command = "npm run netlify-build"
   publish = "out"
