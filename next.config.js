@@ -1,8 +1,6 @@
 const path = require('path')
  
 module.exports = {
-  trailingSlash: true,
-  output: 'export',
   distDir: '.next',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],

@@ -1,11 +1,6 @@
 import axios from "axios";
 import { NextResponse } from "next/server";
 
-// This route will be handled by Netlify functions in production
-export const dynamic = "force-static";
-export const dynamicParams = false;
-export const revalidate = false;
-
 export async function POST(request) {
   const reqBody = await request.json();
   const secret_key = process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY;
