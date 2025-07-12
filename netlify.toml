@@ -1,13 +1,19 @@
 [build]
   command = "npm run netlify-build"
   publish = "out"
+  functions = "netlify/functions"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
-  NEXT_USE_NETLIFY_EDGE = "true"
-  NEXT_FORCE_EDGE_IMAGES = "true"
+  NEXT_USE_NETLIFY_EDGE = "false"
+
+# Handle API routes with Netlify functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
 
 # Handle Next.js image optimization
 [[redirects]]

@@ -2,6 +2,11 @@ import axios from 'axios';
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// This route will be handled by Netlify functions in production
+export const dynamic = "force-static";
+export const dynamicParams = false;
+export const revalidate = false;
+
 // Create and configure Nodemailer transporter
 const transporter = nodemailer.createTransport({
   service: 'gmail',
