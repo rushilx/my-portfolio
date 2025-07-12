@@ -1,9 +1,13 @@
 [build]
   command = "npm run netlify-build"
-  publish = ".next"
+  publish = "out"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_USE_NETLIFY_EDGE = "true"
+  NEXT_FORCE_EDGE_IMAGES = "true"
 
 # Handle Next.js image optimization
 [[redirects]]

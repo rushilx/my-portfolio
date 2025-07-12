@@ -53,8 +53,10 @@ function AboutSection() {
             status="Available for hire"
             contactText="Contact Me"
             onContactClick={() => {
-              const contactSection = document.getElementById('contact');
-              if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+              if (typeof window !== 'undefined') {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
             }}
           />
         </motion.div>
